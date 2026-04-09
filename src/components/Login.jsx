@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
+import { checkValidData } from "../utils/validate";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const email = useRef(null);
+  const password = useRef(null);
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
+  };
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+
+    setErrorMessage(
+      checkValidData(email.current.value, password.current.value),
+    );
+
+
   };
 
   return (
@@ -16,22 +30,30 @@ const Login = () => {
           <h1 className=" text-white text-3xl font-bold">
             Enter your info to {isSignInForm ? "sign in" : "sign up"}
           </h1>
-          {!isSignInForm && <input
-            type="text"
-            placeholder="Full Name"
-            className="bg-gray-950 text-white w-full mt-3 mb-3 p-3 rounded-sm border-white border"
-          />}
+          {!isSignInForm && (
+            <input
+              type="text"
+              placeholder="Full Name"
+              className="bg-gray-950 text-white w-full mt-3 mb-3 p-3 rounded-sm border-white border"
+            />
+          )}
           <input
+            ref={email}
             type="text"
             placeholder="Email"
             className="bg-gray-950 text-white w-full mt-3 mb-3 p-3 rounded-sm border-white border"
           />
           <input
+            ref={password}
             type="password"
             placeholder="Password"
             className=" bg-gray-950 text-white w-full mt-3 mb-3 p-3 rounded-sm border-white border"
           />
-          <button className="bg-red-700 text-white font-bold w-full p-3 mt-3 rounded-sm cursor-pointer">
+          <p className="text-red-700">{errorMessage}</p>
+          <button
+            onClick={handleButtonClick}
+            className="bg-red-700 text-white font-bold w-full p-3 mt-3 rounded-sm cursor-pointer"
+          >
             {isSignInForm ? "Sign In" : "Sign Up"}
           </button>
           <p
