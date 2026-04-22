@@ -1,4 +1,5 @@
 # React + Vite
+
 # Netflix GPT
 
 - Create React App
@@ -9,18 +10,26 @@
 - Signup form
 - Form validations
 - useRef hook
+- Firebase setup
+- Deploying app to production
+- Create Signup user account in firebase
+
+# Dummy account
+
+- dummy@gmail.com Dummy@16122026
 
 # Features
+
 - Login/Sign Up
-    - Sign in/Sign Up Form
-    - After login redirect to browse page
+  - Sign in/Sign Up Form
+  - After login redirect to browse page
 - Browse page (after authentication)
-    - Header
-    - Main Movie
-        - Trailer in background
-        - Title and Descrption
-        - Movie Suggestions
-            - MovieList * N
-- Netflix GPT
-    - Search Bar
+  - Header
+  - Main Movie
+    - Trailer in background
+    - Title and Descrption
     - Movie Suggestions
+      - MovieList \* N
+- Netflix GPT
+  - Search Bar
+  - Movie Suggestions
