@@ -15,11 +15,14 @@
 - Create Signup user account in firebase
 - Implement signin user in api
 - Created redux store with userSlice
+- Implemented sign out 
+- Update profile api call
 
 # Dummy account
 
 - dummy@gmail.com Dummy@16122026
 - dummyria@gmail.com Dummy@16122026
+- ria@gmail.com New@123456Dummy
 
 # Features
 

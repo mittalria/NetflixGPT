@@ -11,26 +11,19 @@ const Body = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        //sign in case
         const { uid, email, displayName, photoURL } = user;
-        dispatch(
-          addUser({
-            uid: uid,
-            email: email,
-            displayName: displayName,
-            photoURL: photoURL,
-          }),
-        );
+        dispatch(addUser({ uid, email, displayName, photoURL }));
         navigate("/browse");
       } else {
-        // User is signed out
         dispatch(removeUser());
         navigate("/");
       }
     });
-  }, []);
+
+    return () => unsubscribe(); // cleanup
+  }, [dispatch, navigate]);
 
   return (
     <div>
