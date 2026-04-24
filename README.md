@@ -13,10 +13,13 @@
 - Firebase setup
 - Deploying app to production
 - Create Signup user account in firebase
+- Implement signin user in api
+- Created redux store with userSlice
 
 # Dummy account
 
 - dummy@gmail.com Dummy@16122026
+- dummyria@gmail.com Dummy@16122026
 
 # Features
 
