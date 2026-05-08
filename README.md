@@ -17,6 +17,8 @@
 - Created redux store with userSlice
 - Implemented sign out 
 - Update profile api call
+- Register for TMDB API and create an app and get access token
+- Get data from TMDB now playing api 
 
 # Dummy account
 
